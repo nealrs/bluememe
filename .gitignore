@@ -1,0 +1,4 @@
+.env
+.cron_log
+feed.db
+*.rss
