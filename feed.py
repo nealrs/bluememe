@@ -103,7 +103,7 @@ def buildRSS(dbFile):
       fg.title('Bluesky Memes')
       fg.author( {'name':'Neal Shyam','email':'nealrs+rss@gmail.com'} )
       fg.link( href='http://nealshyam.com/rss/meme.rss', rel='alternate' )
-      #fg.logo('http://ex.com/logo.jpg')
+      fg.logo('https://web-cdn.bsky.app/static/apple-touch-icon.png')
       fg.subtitle('A RSS feed of memes from BlueSky. Updated every 20 minutes.')
       fg.description('A RSS feed of memes from BlueSky. Updated every 20 minutes.')
       fg.link( href='http://nealshyam.com/rss/meme.rss', rel='self' )
@@ -123,7 +123,7 @@ def buildRSS(dbFile):
         try:
           fe.pubDate(datetime.datetime.strptime(row[4], '%Y-%m-%dT%H:%M:%S.%fZ').astimezone(pytz.timezone('UTC')).strftime('%a, %d %b %Y %H:%M:%S %z'))
         except ValueError as e:
-          print(e)
+          #print(e)
           fe.pubDate(datetime.datetime.now().astimezone(pytz.timezone('UTC')).strftime('%a, %d %b %Y %H:%M:%S %z'))
           #2025-02-09T01:15:06.490817+00:00
 
